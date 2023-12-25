@@ -6,6 +6,14 @@
     <title>Code</title>
   </head>
   <body>
+    <button id="button1" data-scroll-to="610">Quadratic</button>
+    <button id="button2" data-scroll-to="1500">Electric bill</button>
+    <button id="button3" data-scroll-to="2000">Pascal Triangle</button>
+    <button id="button4" data-scroll-to="610">Scroll Down</button>
+    <button id="button5" data-scroll-to="610">Scroll Down</button>
+    <button id="button6" data-scroll-to="610">Scroll Down</button>
+    <button id="button7" data-scroll-to="610">Scroll Down</button>
+    <button id="button8" data-scroll-to="610">Scroll Down</button>
     <h1 class="code">Calculator</h1>
     <pre class="code">
         #include&#60;stdio.h&#62;
@@ -187,6 +195,9 @@
   </body>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       background-color: black;
     }
@@ -195,4 +206,17 @@
       color: white;
     }
   </style>
+
+  <script>
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const scrollToPosition = button.dataset.scrollTo; // Get the scroll position from the data attribute
+        window.scrollTo({
+          top: scrollToPosition,
+          behavior: "smooth", // Smooth scrolling
+        });
+      });
+    });
+  </script>
 </html>
