@@ -6,7 +6,8 @@
     <title>Document</title>
   </head>
   <body>
-    <pre>
+    <h1 class="code">Calculator</h1>
+    <pre class="code">
         #include&#60;stdio.h&#62;
         #include&#60;stdio.h&#62;
         void main()
@@ -40,5 +41,156 @@
         printf("Result=%d",res);
         }
     </pre>
+    <h1 class="code">QUADRATIC EQUATION</h1>
+    <pre class="code">
+            #include&#60;stdio.h&#62;
+            #include&#60;math.h&#62;
+            int main()
+            {
+            float a, b, c, disc; // Declaration of variables
+            float root1,root2,real,imag;
+            // Reading Co-efficient of Quadratic Equation
+            printf("Entera,b and c values\n");
+            scanf("%f%f%f",&a,&b,&c);
+            if( (a == 0) && (b == 0) )
+            {
+            printf("Invalid coefficients\n");
+            printf (" Try Again with valid inputs!!!!\n");
+            }
+            else if(a == 0) // Linear equation and its root
+            {
+            printf("Linear equation\n");
+            root1 = -c / b;
+            printf("Root=%.3f", root1);
+            }
+            else // Quadratic Equation
+            {
+            // b2 - 4ac is known as discriminant
+            disc = b*b - 4*a*c;
+            if(disc == 0) // Real & equal roots
+            {
+            printf("The roots are real and equal\n");
+            root1 = root2 = -b/(2*a);
+            printf("Root1=%.3f\nRoot2 = %.3f",root1,root2);
+            }
+            else if(disc>0) // Real & distinct roots
+            {
+            printf("The roots are Real and Distinct\n");
+            root1 = (-b+sqrt(disc)) / (2*a);
+            root2 = (-b-sqrt(disc)) / (2*a);
+            printf("Root1=%.3f\nRoot2 = %.3f",root1,root2);
+            }
+            else //Imaginary roots
+            {
+            printf("The roots are Real and Imaginary\n");
+            real = -b / (2*a);
+            //fabs() returns only number ignoring sign
+            imag = sqrt(fabs(disc))/(2*a);
+            printf("Root1=%.3f + i %.3f \n",real, imag);
+            printf("Root2 = %.3f - i %.3f",real,imag);
+            }
+            }
+            return 0;
+            }
+    </pre>
+    <h1 class="code">SELECTION STATEMENTS</h1>
+    <pre class="code">
+            #include&#60;stdio.h&#62;
+            void main()
+            {
+            char name[20]; //Variable declaration
+            int units;
+            float amount;
+            printf("Enter the consumer name\n");
+            scanf("%s", name); //Read the name
+            printf("Enter no. of units consumed \n");
+            scanf("%d",&units); //Read the value for units
+            if(units<=200)
+            {
+            amount=units*80; // Calculate amount
+            }
+            else if(units>200 && units<=300)
+            {
+            }
+            else
+            {
+            }
+            amount=200*80;
+            amount=amount+(units-200)*90;
+            amount=( units-300)*100;
+            amount=amount+100*90;
+            amount=amount+200*80;
+            amount=amount/100; //Converting amount to rupees
+            amount=amount+100; //Adding Meter Charges
+            if(amount>400)
+            {
+            amount=amount+15*amount/100;
+            }
+            printf(“Total Amount to be paid = %f”,amount);
+            }
+    </pre>
+    <h1 class="code">Pascal Triangle</h1>
+    <pre class="code">
+            #include &#60;stdio.h&#62;
+            void main()
+            {
+            int i,j,n;
+            printf("Input number of rows : ");
+            scanf("%d",&n);
+            for(i=0;i<=n;i++)
+            {
+            /* print blank spaces */
+            for(j=1;j<=n-i;j++)
+            printf(" ");
+            /* Display number in ascending order upto middle*/
+            for(j=1;j<=i;j++)
+            printf("%d",j);
+            /* Display number in reverse order after middle */
+            for(j=i-1;j>=1;j--)
+            printf("%d",j);
+            printf("\n");
+            }
+            }
+    </pre>
+    <h1 class="code">Binary Search</h1>
+    <pre class="code">
+            #include&#60;stdio.h&#62;
+            int main()
+            {
+            Principles Of Programming Using C (22POP13/23)
+            Departments of CSE, RNSIT Page | 23
+            int a[30],i,num,key,low,mid,high;//Variables declaration
+            printf("\n Enter the Number of Elements");
+            scanf("%d",&num); //Read num
+            printf("\n Enter the Elements in Sorted Order : ");
+            for(i=0;i<num;i++)
+            scanf("%d",&a[i]);
+            printf("\nEnter the key element to be searched\n");
+            scanf("%d",&key); //Read key
+            low=0;//Assigning low to 0
+            high=num-1; // Assigning high to n-1
+            while(low<=high)
+            {
+            mid=(low + high)/2; //Find out mid value
+            if(a[mid]==key) //Compare a[mid] with key
+            {
+            printf("element %d is found at %d position:",key,mid+1);
+            exit(0); //Exit from the program
+            }
+            else if(a[mid]>key)
+            high=mid-1;
+            else
+            low=mid+1;
+            }
+            printf("UNSUCCESSFULL SEARCH\n");
+            return 0;
+             }            
+    </pre>
   </body>
+
+  <style>
+    .code{
+        font-weight: bold;
+    }
+  </style>
 </html>
