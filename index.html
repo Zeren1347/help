@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code</title>
+  </head>
 
- <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Code</title>
- </head>
-
- <body>
-  <button id="button1" data-scroll-to="610">Quadratic</button>
-  <button id="button2" data-scroll-to="1500">Electric bill</button>
-  <button id="button3" data-scroll-to="2000">Pascal Triangle</button>
-  <button id="button4" data-scroll-to="2500">Binary Search</button>
-  <button id="button5" data-scroll-to="610">Scroll Down</button>
-  <button id="button6" data-scroll-to="610">Scroll Down</button>
-  <button id="button7" data-scroll-to="610">Scroll Down</button>
-  <button id="button8" data-scroll-to="610">Scroll Down</button>
-  <h1 class="code">Calculator</h1>
-  <pre class="code">
+  <body>
+    <button id="button1" data-scroll-to="610">Quadratic</button>
+    <button id="button2" data-scroll-to="1500">Electric bill</button>
+    <button id="button3" data-scroll-to="2000">Pascal Triangle</button>
+    <button id="button4" data-scroll-to="2500">Binary Search</button>
+    <button id="button5" data-scroll-to="3000">Student av</button>
+    <button id="button6" data-scroll-to="3810">Sine series</button>
+    <button id="button7" data-scroll-to="4300">bubble sort</button>
+    <button id="button8" data-scroll-to="4800">std deviation</button>
+    <button id="button9" data-scroll-to="5360">file</button>
+    <button id="button10" data-scroll-to="6000">string</button>
+    <button id="button8" data-scroll-to="6900">matrix mult</button>
+    <h1 class="code">Calculator</h1>
+    <pre class="code">
 #include&#60;stdio.h&#62;
 #include&#60;stdio.h&#62;
 void main()
@@ -50,9 +52,10 @@ exit(0);
 }
 printf("Result=%d",res);
 }
-    </pre>
-  <h1 class="code">QUADRATIC EQUATION</h1>
-  <pre class="code">
+</pre
+    >
+    <h1 class="code">QUADRATIC EQUATION</h1>
+    <pre class="code">
 #include&#60;stdio.h&#62;
 #include&#60;math.h&#62;
 int main()
@@ -103,8 +106,8 @@ printf("Root2 = %.3f - i %.3f",real,imag);
 return 0;
 }
     </pre>
-  <h1 class="code">SELECTION STATEMENTS</h1>
-  <pre class="code">
+    <h1 class="code">SELECTION STATEMENTS</h1>
+    <pre class="code">
 #include&#60;stdio.h&#62;
 void main()
 {
@@ -121,15 +124,15 @@ amount=units*80; // Calculate amount
 }
 else if(units>200 && units<=300)
 {
+amount=200*80;
+amount=amount+(units-200)*90;
 }
 else
 {
-}
-amount=200*80;
-amount=amount+(units-200)*90;
 amount=( units-300)*100;
 amount=amount+100*90;
 amount=amount+200*80;
+}
 amount=amount/100; //Converting amount to rupees
 amount=amount+100; //Adding Meter Charges
 if(amount>400)
@@ -139,8 +142,8 @@ amount=amount+15*amount/100;
 printf(“Total Amount to be paid = %f”,amount);
 }
     </pre>
-  <h1 class="code">Pascal Triangle</h1>
-  <pre class="code">
+    <h1 class="code">Pascal Triangle</h1>
+    <pre class="code">
 #include &#60;stdio.h&#62;
 void main()
 {
@@ -162,8 +165,8 @@ printf("\n");
 }
 }
     </pre>
-  <h1 class="code">Binary Search</h1>
-  <pre class="code">
+    <h1 class="code">Binary Search</h1>
+    <pre class="code">
 #include&#60;stdio.h&#62;
 int main()
 {
@@ -193,35 +196,344 @@ low=mid+1;
 printf("UNSUCCESSFULL SEARCH\n");
 return 0;
 }            
-    </pre>
- </body>
+</pre
+    >
 
- <style>
-  html {
-   scroll-behavior: smooth;
-  }
+    <h1 class="code">Student below av</h1>
+    <pre class="code">
+#include&#60;stdio.h&#62;
+struct student
+{
+char usn[50]; // structure members
+char name[50];
+int marks;
+} s[10]; //structure variable declaration
+void main()
+{ // Declaring and initializing variables
+int i,n,countav=0,countbv=0;
+float sum=0,average;
+printf("Enter number of Students\n");
+scanf("%d",&n);
+printf("Enter information of students:\n");
+for(i=0; i&#60;n;i++)
+{
+printf("Enter USN: ");
+scanf("%s",s[i].usn); //Read USN
+printf("Enter name: ");
+scanf("%s",[i].name); //Read name
+printf("Enter marks: ");
+scanf("%d",&s[i].marks); //Read marks
+printf("\n");
+}
+printf("Displaying Information:");
+for(i=0; i&#60;n; i++)
+{
+printf("\nUSN: %s\n",s[i].usn);
+printf("Name: ");
+puts(s[i].name);
+printf("Marks: %d",s[i].marks);
+printf("\n");
+}
+for(i=0;i&#60;n;i++)
+sum=sum+ s[i].marks; //calculate sum
+average=sum/n; //calculate average
+printf("\nAverage marks: %f",average);
+countav=0;
+countbv=0;
+for(i=0;i&#60;n;i++)
+{
+if(s[i].marks>=average)
+countav++; //compute above average
+else
+countbv++; //compute below average
+}
+printf("\nTotal No of students above average= %d",countav);
+printf("\nTotal No of students below average= %d",countbv);
+}
+</pre
+    >
 
-  body {
-   background-color: black;
-  }
+    <h1 class="code">sine series</h1>
+    <pre class="code">
+#include&#60;stdio.h>
+#include&#60;math.h>
+#define PI 3.142
+int main()
+{
+int i, degree;
+float x, sum=0,term,nume,deno;
+printf("Enter the angle in degree\n");
+scanf("%d",&degree);
+x = degree * (PI/180);//converting degree into radian
+nume = x;
+deno = 1;
+i=2;
+do
+{ //calculating the sine value.
+term = nume/deno;
+nume = -nume*x*x;
+deno = deno*i*(i+1);
+sum=sum+term;
+i=i+2;
+} // Accurate to 4 decimal point digits
+while (fabs(term) >= 0.00001);
+printf("The sine of %d is %.3f\n", degree, sum);
+printf("The sine function of %d is %.3f", degree, sin(x));
+return 0;
+}
+</pre
+    >
+    <h1 class="code">bubble sort</h1>
+    <pre class="code">
+#include&#60;stdio.h>
+int main()
+{
+int n,i,j,a[10],temp; // Declaration of variable
+printf("Enter number of array elements : \n");
+scanf("%d",&n);
+printf("Enter the array elements \n");
+for(i = 0 ; i < n ; i++)scanf("%d",&a[i]);
+printf("The original elements are : \n");
+for(i = 0 ; i < n ; i++)
+printf("%d \t",a[i]);
+for(i= 0 ; i < n-1 ; i++) // Number of Passes
+{
+for(j= 0 ; j< n-i-1; j++) // Comparisons
+if(a[j] > a[j+1]) // Swap elements
+{
+temp = a[j];
+a[j] = a[j+1];
+a[j+1] = temp;
+}
+}
+// Print sorted list
+printf("\n The Sorted elements are : \n");
+for(i = 0 ; i < n ; i++)
+printf("%d \t ",a[i]);
+return 0;
+}
+</pre
+    >
+    <h1 class="code">Std deviation</h1>
+    <pre class="code">
+#include&#60;stdio.h>
+#include&#60;math.h>
+int main()
+{
+float a[10], *ptr, mean, std, sum=0, sumstd=0;
+int n,i;//declaration of variables
+printf("Enter the number of elements\n");
+scanf("%d",&n);
+printf("Enter the array elements\n");
+for(i=0;i&#60;n;i++)
+{
+scanf("%f",&a[i]);
+}
+ptr=a;
+for(i=0;i&#60;n;i++)
+{
+sum=sum+ *ptr;
+ptr++;
+}
+mean=sum/n; // calculate mean
+ptr=a;
+for(i=0;i&#60;n;i++)
+{
+sumstd=sumstd + pow((*ptr - mean),2); ptr++;
+}
+std= sqrt(sumstd/n); // calculate standard deviation
+printf("Sum=%.3f\t",sum);
+printf("Mean=%.3f\t",mean);
+printf("Standard deviation=%.3f\t",std);
+return 0;
+}
+</pre
+    >
+    <h1 class="code">file</h1>
+    <pre class="code">
+#include &#60;stdio.h>
+#include &#60;stdlib.h> // For exit()
+int main()
+{
+FILE *fptr1, *fptr2;
+char filename[100], c;
+printf("Enter the filename to open for reading \n");
+scanf("%s", filename);
+// Open one file for reading
+fptr1 = fopen(filename, "r");
+if (fptr1 == NULL)
+{
+printf("Cannot open file %s \n", filename);
+exit(0);
+}
+printf("Enter the filename to open for writing \n");
+scanf("%s", filename);
+// Open another file for writing
+fptr2 = fopen(filename, "w");
+if (fptr2 == NULL)
+{
+printf("Cannot open file %s \n", filename);
+exit(0);
+}
+// Read contents from file
+c = fgetc(fptr1);
+while (c != EOF)
+{
+fputc(c, fptr2);
+c = fgetc(fptr1);
+}
+printf("\nContents copied to %s", filename);
+fclose(fptr1);
+fclose(fptr2);
+return 0;
+}
+</pre
+    >
+    <h1 class="code">String manipulation</h1>
+    <pre class="code">
+#include&#60;stdio.h>
+int Length(char s1[]);
+int compare(char s1[], char s2[]);
+void concat(char s1[], char s2[]);
+int main()
+{
+char s1[200], s2[100]; // Declaration of variable
+int len,res,count;
+printf("\n Enter the String s1: ");
+gets(s1);
+printf("\n Enter the String s2 :");
+gets(s2);
+len = Length(s1);
+printf("\n Length of the String s1 is : %d", len);
+len = Length(s2);
+printf("\n Length of the String s2 is : %d", len);
+res = compare(s1, s2);
+if(res == 0)
+printf("\n Both the Strings are Equal \n");
+else
+printf("\n The Strings are not Equivalent \n");
+concat(s1, s2);
+printf("\n Concatenated string is :%s", s1);
+getch();
+return(0);
+}
+int Length(char s1)// Function definition
+{
+intlen = 0;
+while (s1[len] != '\0') //find length of the string
+len++;
+return (len);
+}
+//Function to compare two strings
+int compare(char s1[], char s2[])
+{
+int count = 0;
+while(s1[count] == s2[count])
+{
+if(s1[count] == '\0' || s2[count] == '\0')break;
+elsecount++;
+}
+if(s1[count] == '\0' && s2[count] == '\0')return 0;
+else return -1;
+}
+//Function to concatenate two strings
+void concat(char s1[], char s2[])
+{
+int i, j;
+i = strlen(s1);
+for (j = 0; s2[j] != '\0'; i++, j++)
+s1[i] = s2[j]; //copy content of s2 to s1
+s1[i] = '\0'; // Assign null character at the end of s1
+}
+</pre
+    >
+    <h1 class="code">matrix multiplication</h1>
+    <pre class="code">
+#include&#60;stdio.h>
+int main()
+{
+int a[5][5],b[5][5],c[5][5],m,n,p,q,i,j,k;
+printf("Enter the size of first matrix\n");
+//m,n indicates rows columns of first matrix respectively
+scanf("%d %d",&m,&n);
+// p,q indicates rows columns of first matrix respectively
+printf("Enter the size of second matrix\n");
+scanf("%d %d",&p,&q);
+if(n==p)
+{
+// Reading elements of first matrix
+printf("Enter the elements of first matrix\n");
+for(i=0;i&#60;m;i++)
+{
+for(j=0;j&#60;n;j++)
+{
+scanf("%d",&a[i][j]);
+}
+}
+printf("Enter the elements of the second matrix\n");
+// Reading elements of second matrix
+for(i=0;i&#60;p;i++)
+{
+for(j=0;j&#60;q;j++)
+{
+scanf("%d",&b[i][j]);
+}
+}
+for(i=0;i&#60;m;i++)
+{
+for(j=0;j&#60;q;j++)
+{
+c[i][j]=0;
+for(k=0;k&#60;n;k++)
+{
+c[i][j]=c[i][j]+a[i][k]*b[k][j];
+//Matrix Multiplication formula
+}
+}
+}
+printf("The product of two matrix is\n");
+//The resultant matrix
+for(i=0;i&#60;m;i++)
+{
+for(j=0;j&#60;q;j++)
+{
+printf("%d\t",c[i][j]);
+}
+}
+}
+else
+printf("\n");
+return 0;
+}
+</pre
+    >
+  </body>
 
-  .code {
-   font-weight: bold;
-   color: white;
-  }
- </style>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
- <script>
-  const buttons = document.querySelectorAll("button");
-  buttons.forEach((button) => {
-   button.addEventListener("click", () => {
-    const scrollToPosition = button.dataset.scrollTo; // Get the scroll position from the data attribute
-    window.scrollTo({
-     top: scrollToPosition,
-     behavior: "smooth", // Smooth scrolling
+    body {
+      background-color: black;
+    }
+
+    .code {
+      font-weight: bold;
+      color: white;
+    }
+  </style>
+
+  <script>
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const scrollToPosition = button.dataset.scrollTo; // Get the scroll position from the data attribute
+        window.scrollTo({
+          top: scrollToPosition,
+          behavior: "smooth", // Smooth scrolling
+        });
+      });
     });
-   });
-  });
- </script>
-
+  </script>
 </html>
